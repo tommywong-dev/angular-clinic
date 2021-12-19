@@ -35,9 +35,6 @@ export class User {
     return this._phone_number;
   }
   // setters
-  set id(id: string) {
-    this._id = id;
-  }
   set name(name: string) {
     this._name = name;
   }
