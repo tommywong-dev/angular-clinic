@@ -1,0 +1,14 @@
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  mat-card {
+    form {
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+    }
+  }
+}
