@@ -1,3 +1,4 @@
+import { ScheduleInterface } from './schedule';
 import { UserInterface } from './user';
 
-export type { UserInterface };
+export type { UserInterface, ScheduleInterface };

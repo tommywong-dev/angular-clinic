@@ -1,3 +1,5 @@
+import { UserInterface } from '../interfaces';
+
 export class User {
   private _id: string;
   private _name: string;
@@ -6,14 +8,8 @@ export class User {
   private _phone_number: string;
   private _password: string;
 
-  constructor(
-    id: string,
-    name: string,
-    age: number,
-    gender: number,
-    phone_number: string,
-    password: string
-  ) {
+  constructor(user: UserInterface) {
+    const { id, name, age, gender, phone_number, password } = user;
     this._id = id;
     this._name = name;
     this._age = age;
@@ -56,8 +52,7 @@ export class User {
   }
 
   // methods
-  login(id: string, password: string) {
-    if (id !== this._id) throw new Error('ID does not match!');
+  login(password: string) {
     if (password !== this._password)
       throw new Error('Password does not match!');
     return true;
