@@ -9,7 +9,7 @@ export class SnackbarService {
 
   open(message: string, status: 'success' | 'error', action: string = 'Ok') {
     return this.snackbar.open(message, action, {
-      // duration: 5000,
+      duration: 3000,
       horizontalPosition: 'left',
       panelClass: status,
     });

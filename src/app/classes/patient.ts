@@ -9,10 +9,6 @@ export class Patient extends User {
     this._illness = illness;
   }
 
-  // polymorphism from get name() of User
-  get name(): string {
-    return `${this.name} (PATIENT)`;
-  }
   get illness() {
     return this._illness;
   }

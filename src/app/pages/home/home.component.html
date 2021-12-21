@@ -1,0 +1,54 @@
+<main>
+  <mat-card class="container mat-elevation-z0">
+    <div class="top">
+      <img
+        width="50%"
+        src="https://previews.123rf.com/images/nonwarit/nonwarit1709/nonwarit170900006/85489167-female-doctor-consulting-patient-asian-people.jpg"
+        alt="welcome"
+      />
+      <mat-card-content>
+        <button
+          mat-raised-button
+          class="mat-elevation-z1"
+          routerLink="/appointments"
+        >
+          My Appointments
+        </button>
+        <button
+          mat-raised-button
+          class="mat-elevation-z1"
+          routerLink="/profile"
+        >
+          My Profile
+        </button>
+      </mat-card-content>
+    </div>
+    <mat-card-footer>
+      <form [formGroup]="appointmentForm" (ngSubmit)="bookNow()">
+        <mat-card class="mat-elevation-z0">
+          <mat-form-field>
+            <mat-label>Doctor</mat-label>
+            <mat-select formControlName="id">
+              <mat-option *ngFor="let doctor of doctors" [value]="doctor.id">
+                {{ doctor.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-divider [vertical]="true"></mat-divider>
+          <mat-form-field>
+            <mat-label>Date</mat-label>
+            <input matInput type="datetime-local" formControlName="datetime" />
+          </mat-form-field>
+          <button
+            mat-flat-button
+            color="primary"
+            [disabled]="appointmentForm.invalid"
+            type="submit"
+          >
+            Book Now
+          </button>
+        </mat-card>
+      </form>
+    </mat-card-footer>
+  </mat-card>
+</main>

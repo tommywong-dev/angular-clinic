@@ -30,10 +30,6 @@ $clinic-theme: mat.define-light-theme(
   )
 );
 
-$custom-success: #2dd36f;
-$custom-error: #eb445a;
-$custom-light: #f4f5f8;
-
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
@@ -50,34 +46,18 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-// overrides
+// AM overrides
 button {
   &[mat-button],
   &[mat-stroked-button],
+  &[mat-raised-button],
   &[mat-flat-button] {
     border-radius: 1rem;
   }
 }
-
-// register and login
-mat-card.auth-card {
-  margin: 2rem 0;
-  padding: 2rem 1rem;
-  form {
-    min-width: 300px;
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-  }
-  mat-card-footer {
-    display: flex;
-    justify-content: center;
-  }
-}
-
 snack-bar-container {
   .mat-button-wrapper {
-    color: $custom-light;
+    color: mat.get-color-from-palette(mat.$gray-palette, 50);
   }
 }
 snack-bar-container.success {
@@ -87,4 +67,39 @@ snack-bar-container.success {
 snack-bar-container.error {
   background-color: mat.get-color-from-palette($clinic-warn, 700);
   color: mat.get-color-from-palette($clinic-warn, "700-contrast");
+}
+
+// globals
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card.container {
+  margin: 5rem 0;
+  padding: 4rem 2rem 2rem;
+  background-color: mat.get-color-from-palette($clinic-accent, 50);
+  box-shadow: none;
+  border-radius: 1rem;
+  width: clamp(300px, 100%, 700px);
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    mat-form-field {
+      width: clamp(200px, 100%, 500px);
+    }
+  }
+  mat-card-title.auth {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  mat-card-footer {
+    display: flex;
+    justify-content: center;
+  }
 }

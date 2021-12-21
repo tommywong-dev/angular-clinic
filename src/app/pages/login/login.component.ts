@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UserInterface } from 'src/app/interfaces';
 import { SnackbarService } from 'src/app/services/snackbar.service';
-import { UsersService } from 'src/app/services/users.service';
+import { PatientService } from 'src/app/services/patient.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,8 +18,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private usersService: UsersService,
-    private snackbarService: SnackbarService
+    private patienService: PatientService,
+    private snackbarService: SnackbarService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -31,8 +33,9 @@ export class LoginComponent implements OnInit {
     const form: UserInterface = this.loginForm.value;
     const { id, password } = form;
     try {
-      this.usersService.login(id, password);
+      this.patienService.login(id, password);
       this.snackbarService.open('Logged in', 'success');
+      this.router.navigateByUrl('/');
     } catch (error) {
       console.error(error);
       this.snackbarService.open(error.message, 'error');

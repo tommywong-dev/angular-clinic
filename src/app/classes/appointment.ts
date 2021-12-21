@@ -3,7 +3,7 @@ import { Doctor } from './doctor';
 import { Patient } from './patient';
 
 export class Appointment {
-  private _id: number;
+  private _id: string;
   private _date: Date;
   private _doctor: Doctor;
   private _patient: Patient;
@@ -21,7 +21,7 @@ export class Appointment {
   }
 
   // getters
-  get id(): number {
+  get id(): string {
     return this._id;
   }
   get date(): Date {

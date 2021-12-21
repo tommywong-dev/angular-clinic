@@ -4,7 +4,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from 'src/app/classes/user';
 import { UserInterface } from 'src/app/interfaces';
 import { SnackbarService } from 'src/app/services/snackbar.service';
-import { UsersService } from 'src/app/services/users.service';
+import { PatientService } from 'src/app/services/patient.service';
+import { Patient } from 'src/app/classes/patient';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -23,8 +25,9 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private usersService: UsersService,
-    private snackbarService: SnackbarService
+    private patientService: PatientService,
+    private snackbarService: SnackbarService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -36,10 +39,11 @@ export class RegisterComponent implements OnInit {
     }
 
     const form: UserInterface = this.userForm.value;
-    const user: User = new User(form);
+    const patient: Patient = new Patient(form, 'unknown');
     try {
-      this.usersService.register(user);
-      this.snackbarService.open(`Created ${user.name}`, 'success');
+      this.patientService.register(patient);
+      this.snackbarService.open(`Created ${patient.name}`, 'success');
+      this.router.navigateByUrl('/');
     } catch (error) {
       this.snackbarService.open(error.message, 'error');
     }

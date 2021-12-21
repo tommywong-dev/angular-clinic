@@ -6,7 +6,7 @@ export class User {
   private _age: number;
   private _gender: number;
   private _phone_number: string;
-  private _password: string;
+  protected _password: string;
 
   constructor(user: UserInterface) {
     const { id, name, age, gender, phone_number, password } = user;

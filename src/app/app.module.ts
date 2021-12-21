@@ -9,9 +9,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './modules/material.module';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AppointmentsComponent } from './pages/appointments/appointments.component';
+import { PaymentComponent } from './pages/payment/payment.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    RegisterComponent,
+    LoginComponent,
+    HomeComponent,
+    AppointmentsComponent,
+    PaymentComponent,
+    ProfileComponent,
+  ],
   imports: [
     CommonModule,
     BrowserModule,

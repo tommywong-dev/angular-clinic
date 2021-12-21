@@ -2,7 +2,7 @@ import { Doctor } from '../classes/doctor';
 import { Patient } from '../classes/patient';
 
 export interface AppointmentInterface {
-  id: number;
+  id: string;
   date: Date;
   doctor: Doctor;
   patient: Patient;

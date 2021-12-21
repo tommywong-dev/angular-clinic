@@ -1,0 +1,42 @@
+.top {
+  display: flex;
+  flex-direction: row;
+  img {
+    border-radius: 1rem;
+  }
+  mat-card-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    button[mat-raised-button] {
+      width: 200px;
+      padding: 1rem 1.5rem;
+      border-radius: 5rem;
+    }
+  }
+}
+
+mat-card-footer {
+  margin: 2rem 0;
+  mat-card {
+    display: flex;
+    border-radius: 1rem;
+    align-items: center;
+    input {
+      font-size: 0.8rem;
+    }
+    mat-divider {
+      margin: 0 1.5rem;
+      height: 75%;
+    }
+    button[mat-flat-button] {
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      margin: 0 1rem;
+      width: 220px;
+    }
+  }
+}
