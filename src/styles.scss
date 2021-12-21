@@ -12,8 +12,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$clinic-primary: mat.define-palette(mat.$indigo-palette);
-$clinic-accent: mat.define-palette(mat.$green-palette, A200, A100, A400);
+$clinic-primary: mat.define-palette(mat.$teal-palette, 900);
+$clinic-accent: mat.define-palette(mat.$teal-palette, 200);
 
 // The warn palette is optional (defaults to red).
 $clinic-warn: mat.define-palette(mat.$red-palette);
@@ -50,6 +50,15 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+// overrides
+button {
+  &[mat-button],
+  &[mat-stroked-button],
+  &[mat-flat-button] {
+    border-radius: 1rem;
+  }
+}
+
 // register and login
 mat-card.auth-card {
   margin: 2rem 0;
@@ -72,10 +81,10 @@ snack-bar-container {
   }
 }
 snack-bar-container.success {
-  background-color: $custom-success;
-  color: $custom-light;
+  background-color: mat.get-color-from-palette($clinic-primary, 800);
+  color: mat.get-color-from-palette($clinic-primary, "800-contrast");
 }
 snack-bar-container.error {
-  background-color: $custom-error;
-  color: $custom-light;
+  background-color: mat.get-color-from-palette($clinic-warn, 700);
+  color: mat.get-color-from-palette($clinic-warn, "700-contrast");
 }
