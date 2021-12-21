@@ -1,0 +1,17 @@
+<footer>
+  <div class="content">
+    <div>
+      <span *ngFor="let detail of details">
+        <h4>{{ detail.key }}:</h4>
+        <p>{{ detail.value }}</p>
+      </span>
+    </div>
+
+    <div>
+      <h4>Partners:</h4>
+      <span *ngFor="let partner of partners">
+        <p>{{ partner }}</p>
+      </span>
+    </div>
+  </div>
+</footer>

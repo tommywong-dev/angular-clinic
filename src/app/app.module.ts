@@ -13,6 +13,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { AppointmentsComponent } from './pages/appointments/appointments.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     AppointmentsComponent,
     PaymentComponent,
     ProfileComponent,
+    ToolbarComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,

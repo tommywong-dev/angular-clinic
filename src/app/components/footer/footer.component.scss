@@ -1,0 +1,19 @@
+@use "~@angular/material" as mat;
+
+@import "../../../styles.scss";
+
+footer {
+  background-color: mat.get-color-from-palette(mat.$gray-palette, 100);
+  display: flex;
+  justify-content: center;
+  .content {
+    display: flex;
+    padding: 3rem 5rem;
+    width: clamp(500px, 50%, 800px);
+    justify-content: space-between;
+    h4 {
+      text-transform: capitalize;
+      margin-bottom: 0;
+    }
+  }
+}
