@@ -8,16 +8,16 @@ export class Appointment {
   private _doctor: Doctor;
   private _patient: Patient;
   private _description: string;
-  private _cancelled: boolean;
+  private _status: string;
 
   constructor(appointment: AppointmentInterface) {
-    const { id, date, doctor, patient, description, cancelled } = appointment;
+    const { id, date, doctor, patient, description, status } = appointment;
     this._id = id;
     this._date = date;
     this._doctor = doctor;
     this._patient = patient;
     this._description = description;
-    this._cancelled = cancelled;
+    this._status = status;
   }
 
   // getters
@@ -36,8 +36,8 @@ export class Appointment {
   get description(): string {
     return this._description;
   }
-  get cancelled(): boolean {
-    return this._cancelled;
+  get status(): string {
+    return this._status;
   }
 
   // setters
@@ -53,7 +53,7 @@ export class Appointment {
   set description(description: string) {
     this._description = description;
   }
-  set cancelled(cancelled: boolean) {
-    this._cancelled = cancelled;
+  set status(status: string) {
+    this._status = status;
   }
 }

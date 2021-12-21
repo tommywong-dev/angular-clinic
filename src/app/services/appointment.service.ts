@@ -22,7 +22,7 @@ export class AppointmentService {
     this._appointments.push(
       new Appointment({
         id: `A-${this._appointments.length}`,
-        cancelled: false,
+        status: 'pending',
         date,
         doctor,
         patient,

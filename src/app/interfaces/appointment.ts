@@ -7,5 +7,5 @@ export interface AppointmentInterface {
   doctor: Doctor;
   patient: Patient;
   description: string;
-  cancelled: boolean;
+  status: string;
 }
