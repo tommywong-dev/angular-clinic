@@ -1,7 +1,5 @@
 @use "~@angular/material" as mat;
 
-@import "../../../styles.scss";
-
 footer {
   background-color: mat.get-color-from-palette(mat.$gray-palette, 100);
   display: flex;
