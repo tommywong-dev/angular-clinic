@@ -1,0 +1,32 @@
+.receipt {
+  padding: 2rem 4rem;
+  .details {
+    display: flex;
+    flex-direction: column;
+    .detail {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem;
+    }
+  }
+  .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 2rem 0;
+    padding: 1rem 0;
+  }
+}
+
+.button-groups {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  button[mat-flat-button] {
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+  }
+}
