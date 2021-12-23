@@ -6,3 +6,7 @@ export interface UserInterface {
   phone_number: string;
   password: string;
 }
+
+export interface PatientInterface extends UserInterface {
+  illness: string;
+}

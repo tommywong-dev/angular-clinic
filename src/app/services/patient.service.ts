@@ -48,4 +48,12 @@ export class PatientService {
     this._logged_in_user = this._patients[userIndex];
     return this.logged_in_user;
   }
+
+  update(updatingPatient: Patient) {
+    const patientIndex = this._patients.findIndex(
+      (patient) => patient.id === updatingPatient.id
+    );
+    this._patients[patientIndex] = updatingPatient;
+    this._logged_in_user = updatingPatient;
+  }
 }
